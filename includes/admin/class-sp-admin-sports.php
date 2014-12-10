@@ -67,7 +67,7 @@ class SP_Admin_Sports {
 			}
 			asort( self::$options[ __( 'Esports', 'sportspress' ) ] );
 
-			self::$presets = apply_filters( 'sportspress_get_presets', $presets );
+            self::$presets = apply_filters( 'sportspress_get_presets', $presets );
 		}
 		return self::$presets;
 	}
@@ -85,7 +85,9 @@ class SP_Admin_Sports {
 					if ( $json_data ) return json_decode( $json_data, true );
 				}
 			}
-		}
+        }
+
+        return apply_filters('sportspress_get_preset', $id);
 	}
 
 	public static function get_preset_options() {
